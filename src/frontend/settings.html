@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paramètres - Price Scraper</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="header">
+    <div class="header-title">⚙️ Paramètres</div>
+    <div class="header-nav">
+      <button onclick="goToDashboard()">← Retour au Dashboard</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <div class="card">
+        <div class="card-title">Configuration Google Sheets</div>
+        
+        <div class="form-group">
+          <label class="form-label">Nom de la feuille</label>
+          <input type="text" id="sheetName" class="form-input" placeholder="Feuille1">
+          <small style="color: var(--text-muted); display: block; margin-top: 0.5rem;">
+            Le nom de l'onglet dans votre fichier Google Sheets
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Plage de données</label>
+          <input type="text" id="sheetRange" class="form-input" placeholder="A2:Z1000">
+          <small style="color: var(--text-muted); display: block; margin-top: 0.5rem;">
+            La plage contenant vos données (ligne 2 à ligne 1000 par exemple)
+          </small>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Correspondance des colonnes</div>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+          Indiquez la lettre de colonne correspondant à chaque information dans votre Google Sheet.
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label">Marque</label>
+            <input type="text" id="colBrand" class="form-input" placeholder="A" maxlength="2" style="text-transform: uppercase;">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Nom du produit</label>
+            <input type="text" id="colProductName" class="form-input" placeholder="B" maxlength="2" style="text-transform: uppercase;">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Lien achat moins cher</label>
+            <input type="text" id="colCheapestBuyLink" class="form-input" placeholder="C" maxlength="2" style="text-transform: uppercase;">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Prix achat moins cher</label>
+            <input type="text" id="colCheapestBuyPrice" class="form-input" placeholder="D" maxlength="2" style="text-transform: uppercase;">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Lien LCA</label>
+            <input type="text" id="colLcaLink" class="form-input" placeholder="E" maxlength="2" style="text-transform: uppercase;">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Lien KMLS</label>
+            <input type="text" id="colKmlsLink" class="form-input" placeholder="F" maxlength="2" style="text-transform: uppercase;">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Prix de vente estimé</label>
+            <input type="text" id="colEstimatedSalePrice" class="form-input" placeholder="G" maxlength="2" style="text-transform: uppercase;">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Prix de vente réel</label>
+            <input type="text" id="colActualSalePrice" class="form-input" placeholder="H" maxlength="2" style="text-transform: uppercase;">
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="display: flex; gap: 1rem; justify-content: space-between;">
+          <button id="resetBtn" class="btn btn-secondary">
+            🔄 Réinitialiser par défaut
+          </button>
+          <button id="saveBtn" class="btn btn-success">
+            💾 Sauvegarder les paramètres
+          </button>
+        </div>
+      </div>
+
+      <div class="card" style="background: #fef3c7; border-left: 4px solid #f59e0b;">
+        <h3 style="color: #92400e; margin-bottom: 0.5rem;">💡 Astuce</h3>
+        <p style="color: #92400e; margin: 0;">
+          Les colonnes doivent être indiquées en lettres (A, B, C, etc.). Vous pouvez utiliser des colonnes à deux lettres comme AA, AB, etc.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastContainer"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

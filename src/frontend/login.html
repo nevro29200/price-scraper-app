@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion - Price Scraper</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div style="max-width: 600px; margin: 4rem auto;">
+      <div class="card">
+        <div class="card-title" style="text-align: center; color: var(--primary); font-size: 2rem;">
+          🔐 Price Scraper
+        </div>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">
+          Connectez-vous aux fournisseurs LCA et KMLS
+        </p>
+
+        <!-- LCA Section -->
+        <div id="lcaSection">
+          <h3 style="margin-bottom: 1rem; color: var(--text);">📦 LCA Distribution</h3>
+          
+          <div id="lcaLoginForm">
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" id="lcaEmail" class="form-input" placeholder="votre@email.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mot de passe</label>
+              <input type="password" id="lcaPassword" class="form-input" placeholder="••••••••">
+            </div>
+            <button id="lcaLoginBtn" class="btn btn-primary btn-block">
+              Se connecter à LCA
+            </button>
+          </div>
+
+          <div id="lca2FAForm" style="display: none;">
+            <div class="form-group">
+              <label class="form-label">Code 2FA reçu par email</label>
+              <input type="text" id="lca2FACode" class="form-input" placeholder="123456" maxlength="6">
+            </div>
+            <button id="lca2FABtn" class="btn btn-success btn-block">
+              Valider le code 2FA
+            </button>
+          </div>
+
+          <div id="lcaSuccess" style="display: none; text-align: center; padding: 1rem; background: #d1fae5; border-radius: 8px; color: #065f46; margin-top: 1rem;">
+            ✅ Connecté à LCA Distribution
+          </div>
+        </div>
+
+        <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border);">
+
+        <!-- KMLS Section -->
+        <div id="kmlsSection">
+          <h3 style="margin-bottom: 1rem; color: var(--text);">📦 KMLS</h3>
+          
+          <div id="kmlsLoginForm">
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" id="kmlsEmail" class="form-input" placeholder="votre@email.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mot de passe</label>
+              <input type="password" id="kmlsPassword" class="form-input" placeholder="••••••••">
+            </div>
+            <button id="kmlsLoginBtn" class="btn btn-primary btn-block">
+              Se connecter à KMLS
+            </button>
+          </div>
+
+          <div id="kmls2FAForm" style="display: none;">
+            <div class="form-group">
+              <label class="form-label">Code 2FA reçu par email</label>
+              <input type="text" id="kmls2FACode" class="form-input" placeholder="123456" maxlength="6">
+            </div>
+            <button id="kmls2FABtn" class="btn btn-success btn-block">
+              Valider le code 2FA
+            </button>
+          </div>
+
+          <div id="kmlsSuccess" style="display: none; text-align: center; padding: 1rem; background: #d1fae5; border-radius: 8px; color: #065f46; margin-top: 1rem;">
+            ✅ Connecté à KMLS
+          </div>
+        </div>
+
+        <button id="goToDashboard" class="btn btn-success btn-block" style="margin-top: 2rem; display: none;">
+          Accéder au Dashboard →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Connexion en cours...</div>
+  </div>
+
+  <div id="toastContainer"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "sheetName": "Feuille 1",
+  "sheetRange": "A2:Z1000",
+  "columns": {
+    "brand": "A",
+    "productName": "B",
+    "cheapestBuyLink": "C",
+    "cheapestBuyPrice": "D",
+    "lcaLink": "E",
+    "kmlsLink": "F",
+    "estimatedSalePrice": "G",
+    "actualSalePrice": "H"
+  }
+}
